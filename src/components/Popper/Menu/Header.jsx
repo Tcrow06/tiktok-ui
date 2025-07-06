@@ -5,6 +5,8 @@ import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 
 const cx = classNames.bind(styles);
 function Header({ title, onBack }) {
+
+
     return (
         <header className={cx('header')}>
             <button className={cx('back-btn')} onClick={onBack}>

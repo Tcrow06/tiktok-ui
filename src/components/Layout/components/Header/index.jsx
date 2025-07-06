@@ -2,19 +2,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faCircleQuestion,
     faCircleXmark,
-    faCloudUpload,
     faCoins,
     faEarthAsia,
     faEllipsisVertical,
     faGear,
     faKeyboard,
     faMagnifyingGlass,
-    faMessage,
-    faPerson,
-    faSignIn,
     faSignOut,
     faSpinner,
-    faUpload,
     faUser,
 } from '@fortawesome/free-solid-svg-icons';
 import { Children, useEffect, useState } from 'react';
@@ -30,6 +25,8 @@ import images from '~/assets/images';
 import AccountItem from '../../../AccountItem';
 import Menu from '../../../Popper/Menu';
 import { icon } from '@fortawesome/fontawesome-svg-core';
+import { UploadIcon } from '../../../Icons';
+import Image from '~/components/Image';
 
 //dùng classnames.blind để có thể dùng tên class post-item
 // thay vì postItem
@@ -146,7 +143,7 @@ function Header() {
                         <>
                             <Tippy content="Upload video" placement="bottom" delay={[0, 200]}>
                                 <button className={cx('action-btn')}>
-                                    <FontAwesomeIcon icon={faCloudUpload} />
+                                    <UploadIcon />
                                 </button>
                             </Tippy>
                         </>
@@ -165,10 +162,11 @@ function Header() {
                     )}
                     <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
                         {currentUser ? (
-                            <img
+                            <Image
                                 className={cx('user-avatar')}
                                 src="https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/e623922f4be62aeacc02a72d6118c02a~tplv-tiktokx-cropcenter:1080:1080.jpeg?dr=14579&refresh_token=bddf41c5&x-expires=1751904000&x-signature=klbJzIobFre%2BJkh69WzWQinJ7gg%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=my"
                                 alt="Nguyen Van A"
+                                fallback="https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/e623922f4be62aeacc02a72d6118c02a~tplv-tiktokx-cropcenter:1080:1080.jpeg?dr=14579&refresh_token=3326597f&x-expires=1751961600&x-signature=1VVza8DZbqCWmN9I4exPvVNiIzc%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=my"
                             />
                         ) : (
                             <button className={cx('more-btn')}>

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import styles from './AccountItem.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -20,5 +21,14 @@ function AccountItem({ data }) {
         </Link>
     );
 }
+AccountItem.propTypes = {
+    data: PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        full_name: PropTypes.string.isRequired,
+        nickname: PropTypes.string.isRequired,
+        avatar: PropTypes.string,
+        tick: PropTypes.bool,
+    }).isRequired,
+};
 
 export default AccountItem;
